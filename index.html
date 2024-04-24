@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Выключить компьютер</title>
+</head>
+<body>
+
+<button onclick="shutdown()">Выключить компьютер</button>
+
+<script>
+function shutdown() {
+    var result = confirm("Вы действительно хотите выключить компьютер?");
+    if (result) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "shutdown.php", true);
+        xhr.send();
+    }
+}
+</script>
+
+</body>
+</html>
